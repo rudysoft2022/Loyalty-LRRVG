@@ -13,33 +13,26 @@ namespace CRUD.Controllers
     [ApiController]
     public class ClientesController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
 
-        string StrConn = string.Empty;
-        public ClientesController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            StrConn = _configuration.GetConnectionString("SQL");
-        }
 
         [HttpGet("GetClientes")]
         public IEnumerable<Clientes> GetClientes()
         {
 
-            return new ClientesNG(StrConn).GetClientes();
+            return new ClientesNG().GetClientes();
         }
 
         [HttpGet("GetClientesById")]
         public Clientes GetClientesById([FromQuery] string input)
         {
 
-            return new ClientesNG(StrConn).GetClienteById(input);
+            return new ClientesNG().GetClienteById(input);
         }
 
         [HttpPost("CreaActualizaClientes")]
         public IActionResult CreaActualizaClientes([FromBody] Clientes input)
         {
-            Respuesta res = new ClientesNG(StrConn).CreaActualizaCliente(input);
+            Respuesta res = new ClientesNG().CreaActualizaCliente(input);
             if (res == Respuesta.Exito)
                 return StatusCode((int)HttpStatusCode.Created);
             else
@@ -49,7 +42,7 @@ namespace CRUD.Controllers
         [HttpDelete("BajaClientes")]
         public IActionResult DeleteClientes([FromQuery] string input)
         {
-            Respuesta res = new ClientesNG(StrConn).BajaCliente(input);
+            Respuesta res = new ClientesNG().BajaCliente(input);
             if (res == Respuesta.Exito)
                 return StatusCode((int)HttpStatusCode.Created);
             else
@@ -59,7 +52,7 @@ namespace CRUD.Controllers
         [HttpPost("LoginCliente")]
         public Clientes LoginCliente([FromBody] LoginCliente input)
         {
-            return new ClientesNG(StrConn).LoginCliente(input);
+            return new ClientesNG().LoginCliente(input);
         }
     }
 }

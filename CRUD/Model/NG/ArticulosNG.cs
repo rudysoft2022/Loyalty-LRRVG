@@ -1,31 +1,27 @@
-﻿using CRUD.Model.DAO;
-using CRUD.Model.Entidades;
+﻿using CRUD.Model.Entidades;
+using CRUD.Model.Repositorio.IRepository;
 using System.Collections.Generic;
 
 namespace CRUD.Model.NG
 {
     public class ArticulosNG
     {
-        string _conn = string.Empty;
-        public ArticulosNG(string conn)
-        {
-            _conn = conn;
-        }
         public List<Articulos> GetArticulos()
         {
-            return new SqlDAOArticulos(_conn).GetArticulos();
+            
+            return IRepository.GetArticulos().GetArticulos();
         }
         public Articulos GetArticuloById(string codigo)
         {
-            return new SqlDAOArticulos(_conn).GetArticuloById(codigo);
+            return IRepository.GetArticulos().GetArticuloById(codigo);
         }
         public Respuesta CreaActualizaArticulo(Articulos articulo)
         {
-            return new SqlDAOArticulos(_conn).CreaActualizaArticulo(articulo);
+            return IRepository.GetArticulos().CreaActualizaArticulo(articulo);
         }
         public Respuesta BajaArticulo(string codigo)
         {
-            return new SqlDAOArticulos(_conn).BajaArticulo(codigo);
+            return IRepository.GetArticulos().BajaArticulo(codigo);
         }
       
 

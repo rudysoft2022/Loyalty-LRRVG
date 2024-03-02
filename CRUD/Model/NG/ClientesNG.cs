@@ -1,36 +1,32 @@
-﻿using CRUD.Model.DAO;
-using CRUD.Model.Entidades;
+﻿using CRUD.Model.Entidades;
+using CRUD.Model.Repositorio.IRepository;
 using System.Collections.Generic;
 
 namespace CRUD.Model.NG
 {
     public class ClientesNG
     {
-        string _conn = string.Empty;
-        public ClientesNG(string conn)
-        {
-            _conn = conn;
-        }
+      
         public List<Clientes> GetClientes()
         {
-            return new SqlDAOClientes(_conn).GetClientes();
+            return IRepository.GetClientes().GetClientes();
         }
         public Clientes GetClienteById(string idcliente)
         {
-            return new SqlDAOClientes(_conn).GetclienteById(idcliente);
+            return IRepository.GetClientes().GetclienteById(idcliente);
         }
         public Respuesta CreaActualizaCliente(Clientes cliente)
         {
-            return new SqlDAOClientes(_conn).CreaActualizacliente(cliente);
+            return IRepository.GetClientes().CreaActualizacliente(cliente);
         }
         public Respuesta BajaCliente(string idcliente)
         {
-            return new SqlDAOClientes(_conn).Bajacliente(idcliente);
+            return IRepository.GetClientes().Bajacliente(idcliente);
         }
 
         public Clientes LoginCliente(LoginCliente data)
         {
-            return new SqlDAOClientes(_conn).LoginCliente(data);
+            return IRepository.GetClientes().LoginCliente(data);
         }
 
     }

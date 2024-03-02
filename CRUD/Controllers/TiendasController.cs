@@ -13,33 +13,25 @@ namespace CRUD.Controllers
     [ApiController]
     public class TiendasController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-
-        string StrConn = string.Empty;
-        public TiendasController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            StrConn = _configuration.GetConnectionString("SQL");
-        }
-
+       
         [HttpGet("GetTiendas")]
         public IEnumerable<Tiendas> GetTiendas()
         {
 
-            return new TiendasNG(StrConn).GetTienda();
+            return new TiendasNG().GetTienda();
         }
 
         [HttpGet("GetTiendasById")]
         public Tiendas GetTiendasById([FromQuery] string input)
         {
 
-            return new TiendasNG(StrConn).GetTiendaById(input);
+            return new TiendasNG().GetTiendaById(input);
         }
 
         [HttpPost("CreaActualizaTiendas")]
         public IActionResult CreaActualizaTiendas([FromBody] Tiendas input)
         {
-            Respuesta res = new TiendasNG(StrConn).CreaActualizaTienda(input);
+            Respuesta res = new TiendasNG().CreaActualizaTienda(input);
             if (res == Respuesta.Exito)
                 return StatusCode((int)HttpStatusCode.Created);
             else
@@ -49,7 +41,7 @@ namespace CRUD.Controllers
         [HttpDelete("BajaTiendas")]
         public IActionResult DeleteTiendas([FromQuery] string input)
         {
-            Respuesta res = new TiendasNG(StrConn).BajaTienda(input);
+            Respuesta res = new TiendasNG().BajaTienda(input);
             if (res == Respuesta.Exito)
                 return StatusCode((int)HttpStatusCode.Created);
             else

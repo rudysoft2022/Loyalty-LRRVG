@@ -13,19 +13,11 @@ namespace CRUD.Controllers
     [ApiController]
     public class VentasController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-
-        string StrConn = string.Empty;
-        public VentasController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-            StrConn = _configuration.GetConnectionString("SQL");
-        }
-
+       
         [HttpPost("RegistraVentas")]
         public IActionResult RegistraVentas([FromBody] Ventas input)
         {
-            Respuesta res = new VentasNG(StrConn).RegistraVentas(input);
+            Respuesta res = new VentasNG().RegistraVentas(input);
             if (res == Respuesta.Exito)
                 return StatusCode((int)HttpStatusCode.Created);
             else

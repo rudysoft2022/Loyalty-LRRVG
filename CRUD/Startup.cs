@@ -1,4 +1,3 @@
-using CRUD.Model.DAO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,6 +31,9 @@ namespace CRUD
 
             services.AddCors(o => o.AddPolicy("MiPolitica", builder =>
             {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
                 builder.WithOrigins("http://localhost:4200").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
             }));
 
