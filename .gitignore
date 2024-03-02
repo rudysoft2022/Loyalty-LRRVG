@@ -1,0 +1,20 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/slnx.sqlite
+/CRUD/obj/Debug/netcoreapp3.1/CRUD.AssemblyInfo.cs
+/CRUD/obj/Debug/netcoreapp3.1/CRUD.AssemblyInfoInputs.cache
+/CRUD/obj/Debug/netcoreapp3.1/CRUD.assets.cache
+/CRUD/obj/Debug/netcoreapp3.1/CRUD.GeneratedMSBuildEditorConfig.editorconfig
+/CRUD/obj/Release/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
+/CRUD/obj/Release/netcoreapp3.1/CRUD.AssemblyInfo.cs
+/CRUD/obj/Release/netcoreapp3.1/CRUD.AssemblyInfoInputs.cache
+/CRUD/obj/Release/netcoreapp3.1/CRUD.assets.cache
+/CRUD/obj/Release/netcoreapp3.1/CRUD.csproj.AssemblyReference.cache
+/CRUD/obj/Release/netcoreapp3.1/CRUD.GeneratedMSBuildEditorConfig.editorconfig
+/.vs/Loyalty/FileContentIndex/648aaef5-70b4-41ae-bc4d-4c39a05400c2.vsidx
+/.vs/Loyalty/FileContentIndex/a938b3d3-2347-4c3c-92e7-acbc49e79d09.vsidx
+/.vs/Loyalty/FileContentIndex/e6b3fd4b-c012-474f-89bd-2df96be6472e.vsidx
+/.vs/VSWorkspaceState.json
+/.vs/Loyalty/FileContentIndex/8aca1288-df2c-4b62-9e15-f598bc378d4b.vsidx
