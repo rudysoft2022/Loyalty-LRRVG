@@ -1,0 +1,18 @@
+<mat-card class="container" [formGroup]="cartItem">
+    <mat-form-field appearance="fill">
+      <mat-select placeholder="Seleccion un articulo" formControlName="codigo">
+        <mat-option  *ngFor="let item of items"
+            [value]="item.codigo" (onSelectionChange)="changeSelection(item)">{{item.descripcion}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <input  type="number" formControlName="cantidad" matInput placeholder="Cantidad">
+    </mat-form-field>
+ 
+    Precio $ {{precio}} - Stock {{stock}}
+    <button mat-raised-button class="mat-primary add-button"
+            [disabled]="cartItem.invalid"
+            (click)="addCartItem()">Agregar</button>
+  </mat-card>
+  

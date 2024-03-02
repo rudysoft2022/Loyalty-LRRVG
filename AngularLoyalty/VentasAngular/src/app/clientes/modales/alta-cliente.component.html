@@ -1,0 +1,45 @@
+<h2 mat-dialog-title>{{tituloAccion}}</h2>
+<mat-dialog-content class="mat-typography">
+  
+        <form [formGroup]="formData">
+          <div fxLayout.gt-sm="row" fxLayout="column" fxLayoutGap="16px">
+            <div fxFlex="100" fxFlex.lt-md="100" fxLayout="column">
+              <div class="form-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>Nombre</mat-label>
+                  <input matInput formControlName="Nombre" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="form-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>Apellidos</mat-label>
+                  <input matInput formControlName="Apellidos" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="form-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>Direccion</mat-label>
+                  <input matInput formControlName="Direccion" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="form-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>Correo</mat-label>
+                  <input matInput formControlName="Correo" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="form-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" formControlName="Password" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </form>
+      </mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cerrar</button>
+  <button mat-button color="primary" [disabled]="formData.invalid"  (click)="addEdit()">{{botonAccion}}</button>
+  
+</mat-dialog-actions>

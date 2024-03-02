@@ -1,0 +1,64 @@
+<h2 mat-dialog-title>{{tituloAccion}}</h2>
+<mat-dialog-content class="mat-typography">
+  
+        <form [formGroup]="formData">
+          <div fxLayout.gt-sm="row" fxLayout="column" fxLayoutGap="16px">
+            <div fxFlex="100" fxFlex.lt-md="100" fxLayout="column">
+              <div class="form-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>Sucursal</mat-label>
+                  <input matInput formControlName="Sucursal" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="form-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>Direccion</mat-label>
+                  <input matInput formControlName="Direccion" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class="form-fields">
+                <div class="mat-elevation-z8">
+                  <table mat-table [dataSource]="dataSourceArt">
+                    <ng-container matColumnDef="select">
+                      <th mat-header-cell *matHeaderCellDef>
+                        <mat-checkbox (change)="$event ? masterToggle() : null"
+                                      [checked]="selection.hasValue() && isAllSelected()"
+                                      [indeterminate]="selection.hasValue() && !isAllSelected()">
+                        </mat-checkbox>
+                      </th>
+                      <td mat-cell *matCellDef="let row">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                                      (change)="$event ? selection.toggle(row) : null"
+                                      [checked]="selection.isSelected(row)">
+                        </mat-checkbox>
+                      </td>
+                    </ng-container>
+                    <ng-container matColumnDef="codigo">
+                      <th mat-header-cell *matHeaderCellDef> codigo </th>
+                      <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="descripcion">
+                      <th mat-header-cell *matHeaderCellDef> descripcion </th>
+                      <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                        (click)="selection.toggle(row)">
+                    </tr>
+                  </table>
+                    <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+                    </div>
+                 
+              </div>
+              
+            </div>
+          </div>
+        </form>
+      </mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cerrar</button>
+  <button mat-button color="primary" [disabled]="formData.invalid"  (click)="addEdit()">{{botonAccion}}</button>
+  
+</mat-dialog-actions>

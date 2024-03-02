@@ -1,0 +1,59 @@
+<mat-toolbar color="accent" class="mat-toolbar-title">
+  <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+  </button>
+  Menu
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="primary" (click)="onLogin()" *ngIf="!isLogin">Login</button>
+  <button mat-raised-button color="primary" (click)="onSalir()" *ngIf="isLogin">Salir</button>
+  </mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="true" style="width:300px">
+      <mat-nav-list>
+          <mat-list-item>
+              <div class="form-fields">
+                  <a style="cursor:pointer" (click)="onRouterNavigate('tiendas','Tiendas')">
+                      Tiendas
+                  </a>
+                  <span class="spacer margin-right"></span>
+                  <mat-icon class="next-button-color">navigate_next</mat-icon>
+              </div>
+          </mat-list-item>
+          <mat-list-item class="divider-fusionpro">
+              <div class="form-fields">
+                  <a style="cursor:pointer" (click)="onRouterNavigate('clientes','clientes')">
+                     Clientes
+                  </a>
+                  <span class="spacer margin-right"></span>
+                  <mat-icon class="next-button-color">navigate_next</mat-icon>
+              </div>
+          </mat-list-item>
+          <mat-list-item class="divider-fusionpro">
+            <div class="form-fields">
+                <a style="cursor:pointer" (click)="onRouterNavigate('articulos','articulos')">
+                   Articulos
+                </a>
+                <span class="spacer margin-right"></span>
+                <mat-icon class="next-button-color">navigate_next</mat-icon>
+            </div>
+        </mat-list-item>
+        <mat-list-item class="divider-fusionpro">
+          <div class="form-fields">
+              <a style="cursor:pointer" (click)="onRouterNavigate('ventas','ventas')">
+                 Ventas
+              </a>
+              <span class="spacer margin-right"></span>
+              <mat-icon class="next-button-color">navigate_next</mat-icon>
+          </div>
+      </mat-list-item>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+<router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<style>
+    .example-spacer {
+  flex: 1 1 auto;
+}
+</style>

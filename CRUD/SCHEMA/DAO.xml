@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DAO>
+	<articulos>
+		AdministraArticulo
+	</articulos>
+	<tiendas>
+		AdministraTienda
+	</tiendas>
+	<clientes>
+		AdministraCliente
+	</clientes>
+	<ventas>
+		RegistraVentas
+	</ventas>
+	<tiendasArticulo>
+		InventarioTienda
+	</tiendasArticulo>
+	
+</DAO>

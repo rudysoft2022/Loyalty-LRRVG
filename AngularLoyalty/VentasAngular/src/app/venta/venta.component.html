@@ -1,0 +1,68 @@
+<div>
+    <h1>Ventas</h1>
+    <div>
+      <form [formGroup]="formData">
+      <mat-form-field appearance="fill">
+        <mat-select placeholder="Seleccion una tienda" formControlName="tienda">
+          <mat-option  *ngFor="let item of dataSourceTienda"
+              [value]="item.idTienda">{{item.sucursal}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-select placeholder="Seleccion un cliente" formControlName="cliente">
+          <mat-option  *ngFor="let item of dataSourceCliente"
+              [value]="item.idCliente">{{item.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </form>
+    </div>
+    <div >
+     
+            <p>Articulos del carrito</p>
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+          
+              
+              <ng-container matColumnDef="codigo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> codigo </th>
+                <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+              </ng-container>
+              <ng-container matColumnDef="descripcion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> descripcion </th>
+                <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+              </ng-container>
+              <ng-container matColumnDef="precio">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> precio </th>
+                <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+              </ng-container>
+              <ng-container matColumnDef="cantidad">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> cantidad </th>
+                <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="accion">
+                <th mat-header-cell *matHeaderCellDef> accion </th>
+                <td mat-cell *matCellDef="let element, let i = index">
+                  <i class="material-icons" (click)="deleteItemCart(i)">delete</i>
+                </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+    </div>
+    <div style="margin-top: 20px;">
+        <h1>Total - {{total | currency}}</h1>
+    </div>
+        <div>
+
+            <app-articulos-item></app-articulos-item>
+        </div>
+      
+        <div>
+          <button mat-raised-button color="primary" (click)="onComprar()">Comprar</button>
+        </div>
+      
+</div>
+
