@@ -77,3 +77,13 @@ D:\DeveloperTeam\Curso .NET Core\Practica\CRUD\CRUD\obj\Debug\netcoreapp3.1\CRUD
 D:\DeveloperTeam\Curso .NET Core\Practica\CRUD\CRUD\obj\Debug\netcoreapp3.1\CRUD.dll
 D:\DeveloperTeam\Curso .NET Core\Practica\CRUD\CRUD\obj\Debug\netcoreapp3.1\CRUD.pdb
 D:\DeveloperTeam\Curso .NET Core\Practica\CRUD\CRUD\obj\Debug\netcoreapp3.1\CRUD.genruntimeconfig.cache
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.csproj.AssemblyReference.cache
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.AssemblyInfoInputs.cache
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.AssemblyInfo.cs
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.csproj.CoreCompileInputs.cache
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.sourcelink.json
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.dll
+C:\Users\Rudysoft\source\repos\Loyalty\CRUD\obj\Debug\netcoreapp3.1\CRUD.pdb
